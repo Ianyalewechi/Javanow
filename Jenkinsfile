@@ -20,7 +20,7 @@ pipeline {
 
         stage('Login to Docker ECR') {
             steps {
-                withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
+                withCredentials([string(credentialsId: 'IDS', variable: 'Dockerpwd')]) {
                     sh "sudo docker login -u ikedi -p ${Dockerpwd}"
                 }
             }
